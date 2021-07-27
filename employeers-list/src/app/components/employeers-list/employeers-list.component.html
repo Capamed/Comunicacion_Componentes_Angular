@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input"  [(ngModel)]="radioButtonSelected" type="radio" name="gender" id="all" value="All">
+                <label class="form-check-label" for="all">All({{getEmployeersCount()}})</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input"  [(ngModel)]="radioButtonSelected" type="radio" name="gender" id="female" value="Female">
+                <label class="form-check-label" for="female">Female({{getFemaleCount()}})</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input"  [(ngModel)]="radioButtonSelected" type="radio" name="gender" id="male" value="Male">
+                <label class="form-check-label" for="male">Male({{getMaleCount()}})</label>
+              </div>
+        </div>
+    </div>
+    <div class="card mt-3">
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Identification</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Lastname</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Salary</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <ng-container *ngFor="let employeer of listEmployeers">
+                    <tr *ngIf="radioButtonSelected === 'All' || radioButtonSelected === employeer.gender">
+                      <td>{{employeer.identification}}</td>
+                      <td>{{employeer.name}}</td>
+                      <td>{{employeer.lastname}}</td>
+                      <td>{{employeer.gender}}</td>
+                      <td>{{employeer.salary | currency}}</td>
+                    </tr>
+                  </ng-container>
+                </tbody>
+              </table>
+        </div>
+</div>
