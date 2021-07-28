@@ -50,6 +50,13 @@ export class EmployeersListComponent implements OnInit {
       lastname: 'Barton',
       gender: 'Male',
       salary: 6000
+    },
+    {
+      identification: 7,
+      name: 'Natasha',
+      lastname: 'Romanoff',
+      gender: 'Female',
+      salary: 7000
     }
   ];
 
@@ -70,5 +77,9 @@ export class EmployeersListComponent implements OnInit {
 
   getMaleCount():number{
     return this.listEmployeers.filter(list=>list.gender === 'Male').length;
+  }
+
+  employeersCountRadioButtonChange(radioButtonSelected:string):void{
+    this.radioButtonSelected = radioButtonSelected;
   }
 }

@@ -13,3 +13,8 @@ export class Employeer{
         this.salary = salary;
     }
 }
+export interface ValuesEmployeers{
+    all:number,
+    femaleCount:number,
+    maleCount:number
+}

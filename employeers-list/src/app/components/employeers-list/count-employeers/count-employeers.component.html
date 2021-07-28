@@ -1,1 +1,16 @@
-<p>count-employeers works!</p>
+<div class="card">
+    <div class="card-body">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input"  [(ngModel)]="radioButtonSelected" type="radio" name="gender" id="all" (change)="radioChange()" value="All">
+            <label class="form-check-label" for="all">All({{valuesEmployeers.all}})</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input"  [(ngModel)]="radioButtonSelected" type="radio" name="gender" id="female" (change)="radioChange()" value="Female">
+            <label class="form-check-label" for="female">Female({{valuesEmployeers.femaleCount}})</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input"  [(ngModel)]="radioButtonSelected" type="radio" name="gender" id="male" (change)="radioChange()" value="Male">
+            <label class="form-check-label" for="male">Male({{valuesEmployeers.maleCount}})</label>
+          </div>
+    </div>
+</div>

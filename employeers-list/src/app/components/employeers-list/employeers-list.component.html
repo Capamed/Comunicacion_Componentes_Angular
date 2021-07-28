@@ -1,20 +1,5 @@
 <div class="container">
-    <div class="card">
-        <div class="card-body">
-            <div class="form-check form-check-inline">
-                <input class="form-check-input"  [(ngModel)]="radioButtonSelected" type="radio" name="gender" id="all" value="All">
-                <label class="form-check-label" for="all">All({{getEmployeersCount()}})</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input"  [(ngModel)]="radioButtonSelected" type="radio" name="gender" id="female" value="Female">
-                <label class="form-check-label" for="female">Female({{getFemaleCount()}})</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input"  [(ngModel)]="radioButtonSelected" type="radio" name="gender" id="male" value="Male">
-                <label class="form-check-label" for="male">Male({{getMaleCount()}})</label>
-              </div>
-        </div>
-    </div>
+  <app-count-employeers [valuesEmployeers]="{all:getEmployeersCount(),femaleCount:getFemaleCount(),maleCount:getMaleCount()}" (countRadioButtonChange)="employeersCountRadioButtonChange($event)"></app-count-employeers>
     <div class="card mt-3">
         <div class="card-body">
             <table class="table">
